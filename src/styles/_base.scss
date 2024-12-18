@@ -1,0 +1,15 @@
+@use './global' as *;
+@use 'base/root' as *;
+
+// base components
+// that above root styles and global scss
+// components for all pages 
+@use './components/UI/copyrights';
+
+// custom properties start
+.footer {
+    background-color: $color-main;
+}
+.header {
+    background-color: $color-main;
+}

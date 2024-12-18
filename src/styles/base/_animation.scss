@@ -1,0 +1,42 @@
+@keyframes reveal-left {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-right {
+animation: reveal-right 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes reveal-right {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-left {
+animation: reveal-left 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+animation: fade-in-loading 1s linear;
+}  
+
+
+
+

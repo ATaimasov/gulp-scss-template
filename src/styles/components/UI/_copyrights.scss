@@ -1,0 +1,21 @@
+@use '../../global' as *;
+
+.copyrights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @include mf-bp-rem('padding', (
+        xs: 16px,
+    ));
+
+    &__logo {
+        @include mf-bp-rem('width', (
+            xs: 163px,
+        ));
+        @include mf-bp-rem('height', (
+            xs: 32px,
+        ));
+    }
+}
