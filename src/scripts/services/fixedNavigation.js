@@ -1,8 +1,6 @@
 import $ from 'jquery';
 import { throttle } from '../utils/throttle.js';
 
-
-
   //  correct import ↔ export of the navigation state
 
 const navState = {
@@ -21,8 +19,8 @@ let $tempScrollTop = $(window).scrollTop();
 
 function fixedNavigation () {
 
-  if (navState.isScrolling || navState.isBurgerOpen || navState.isSearchOpen) return; 
-  
+  if (navState.isScrolling || navState.isBurgerOpen || navState.isSearchOpen) return;
+
   let $currentScrollTop = $(window).scrollTop();
 
   if ($currentScrollTop > $nav.height()) {
@@ -43,5 +41,5 @@ function fixedNavigation () {
   $(window).on('scroll', throttledfixedNavigation), {passive: true};
 
 
-  export {$nav, $navAppearing, $navHidden}; 
+  export {$nav, $navAppearing, $navHidden};
   export { navState };

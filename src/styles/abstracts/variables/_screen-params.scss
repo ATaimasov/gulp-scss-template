@@ -1,12 +1,11 @@
-@use '../functions/values/px-to-rem' as *;
+@use '../functions/values/rem' as *;
 
-// screen sizes
-$screen-xs : px-to-rem(0px);
-$screen-sm : px-to-rem(480px);
-$screen-md : px-to-rem(768px);
-$screen-lg : px-to-rem(992px);
-$screen-xl : px-to-rem(1200px);
-$screen-xxl: px-to-rem(1600px);
+$screen-xs : rem(0px);
+$screen-sm : rem(480px);
+$screen-md : rem(768px);
+$screen-lg : rem(992px);
+$screen-xl : rem(1200px);
+$screen-xxl: rem(1600px);
 
 $breakpoints: (
   xs : $screen-xs,

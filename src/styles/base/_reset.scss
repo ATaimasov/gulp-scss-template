@@ -82,7 +82,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline
 }
@@ -104,8 +103,8 @@ select {
     text-transform: none
 }
 
-button, 
-input, 
+button,
+input,
 textarea,
 select {
     font-family: inherit;
@@ -149,11 +148,6 @@ input[type=search] {
 
 input[type='number'] {
     -moz-appearance:textfield;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none
 }
 
 body {
@@ -222,34 +216,16 @@ table {
     border-spacing: 0
 }
 
-// all elements inherit box-sizing from the root element, 
-// but if you need to change it, just return box-sizing: content-box; 
+// all elements inherit box-sizing from the root element,
+// but if you need to change it, just return box-sizing: content-box;
 // on some selector and all its descendants will inherit this property.
 html {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-*, *::before, *::after { 
-    box-sizing: inherit; 
+*, *::before, *::after {
+    box-sizing: inherit;
 }
-
-/* exception for non smooth scrolling settings */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
-  }
-
-html {
-    scroll-padding-top: 5%;
-}  
-
-//fix "jumping" content when the scrollbar appears or is hidden.
-//html,
-//body {
-//  scrollbar-gutter: stable;
-//}
-
 
 // need alternatives if you want to disable outline on focus
 // will work in contrast mode in any case
@@ -258,4 +234,3 @@ html {
 // a:hover {
 //     outline: transparent;
 // }
-

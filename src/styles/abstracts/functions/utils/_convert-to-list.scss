@@ -1,5 +1,5 @@
 @use "sass:list";
-@use "../values/px-to-rem" as *;
+@use "../values/rem" as *;
 @use '../utils/is-list' as *;
  
    @function convert-to-list($values) {

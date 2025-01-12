@@ -1,7 +1,6 @@
 import $ from "jquery";
 import { navState } from '../services/fixedNavigation.js';
 
-
 $(() => {
     const $searchIcon      = $('#mobile-search-icon');
     const $searchIconClose = $('#mobile-search-close');
@@ -25,4 +24,3 @@ $(() => {
         }
     });
 });
-  

@@ -13,11 +13,6 @@ export const js = () => {
             entry: {
                 main: './src/scripts/main.js',
                 about: './src/scripts/about.js',
-                patients: './src/scripts/patients.js',
-                services: './src/scripts/services.js',
-                news: './src/scripts/news.js',
-                documents: './src/scripts/documents.js',
-                contacts: './src/scripts/contacts.js'
                 // add other pages as needed
             },
             output: {

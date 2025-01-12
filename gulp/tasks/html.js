@@ -1,4 +1,3 @@
-import fileInclude from "gulp-file-include";
 import versionNumber from "gulp-version-number";
 
 export const html = () => {
@@ -9,35 +8,27 @@ export const html = () => {
                 message: "Error: <%= error.message %>"
             })
         ))
-        .pipe(fileInclude())
-        .pipe(app.plugins.replace(/@img\//g, 'img/'))
-        // get CSP error with browsersync option serveStaticOptions ['html']. Instead of this use gulp-replace with regex below for deleting '.html' from href
-        // .pipe(
-        //     app.plugins.if(
-        //         app.isBuild,
-        //         app.plugins.replace(/href="([^"]*\.html)"/g, (match, p1) => `href="${p1.replace(/\.html$/, '')}"`)
-        //     )
-        // )
-        // .pipe(
-        //     app.plugins.if(
-        //         app.isBuild,
-        //         versionNumber({
-        //             'value': '%DT%',
-        //             'append': {
-        //                 'key': '_v',
-        //                 'cover': 0,
-        //                 'to': [
-        //                     'css',
-        //                     'js',
-        //                 ]
-        //             },
-        //             'output': {
-        //                 'file': 'gulp/version.json'
-        //             }
-        //         })
-        //     )
-        // )
-      
+        // .pipe(app.plugins.replace(app.plugins.settings.replace.components[0], app.plugins.settings.replace.components[1]))
+        .pipe(app.plugins.fileInclude(app.plugins.settings.fileIncludeSettings))
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                versionNumber({
+                    'value': '%DT%',
+                    'append': {
+                        'key': '_v',
+                        'cover': 0,
+                        'to': [
+                            'css',
+                            'js',
+                        ]
+                    },
+                    'output': {
+                        'file': 'gulp/version.json'
+                    }
+                })
+            )
+        )
         .pipe(app.gulp.dest(app.path.build.html))
         .pipe(app.plugins.browserSync.stream());
 }

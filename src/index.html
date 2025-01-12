@@ -4,24 +4,24 @@
     @@include('./components/Head.html', {
         "title": "Alexander Taimasov",
         "description": "Alexander Taimasov",
-        "ogImage": "PASTE YOUR DOMAIN",
-        "ogUrl": "PASTE YOUR DOMAIN",
+        "ogImage": "https://xn--80aag0apnud.xn--p1ai/",
+        "ogUrl": "https://xn--80aag0apnud.xn--p1ai/img/Alexander-Taimasov.png",
         "style-name": "main"
     })
 </head>
-<body class="body body--grid">
-    <header class="header header--grid">
+<body class="body smooth-mesh-background">
+    <header class="header">
         @@include('./components/TheHeader.html', {"class": 'header'})
     </header>
-    <main class="main main--grid" id="app">
-        <img src="./img/example-img.png" alt="" class="img">
-        <img src="./img/example-img.png" alt="" class="img">
-        <img src="./img/example-img.png" alt="" class="img">
+    <main class="main" id="app">
+        @@include('./components/TheMain.html', {
+            "page": "main"
+        })
     </main>
-    <footer class="footer footer--grid">
+    <footer class="footer">
         @@include('./components/TheFooter.html', {})
         <div class="screen-overlay--fade" id="screen-overlay--fade"></div>
     </footer>
-    <script src="../js/main.min.js"></script>
+    <script src="./js/main.min.js"></script>
 </body>
 </html>

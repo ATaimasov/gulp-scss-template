@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "../utils/strip-unit" as *;
 
+// average value between two values
 @function avg($value1, $value2) {
   $unit1: math.unit($value1);
   $unit2: math.unit($value2);

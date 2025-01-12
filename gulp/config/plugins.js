@@ -5,6 +5,7 @@ import browserSync from 'browser-sync';
 import rename from 'gulp-rename';
 import newer from 'gulp-newer';
 import ifPlugin from 'gulp-if';
+import fileInclude from "gulp-file-include";
 
 export const plugins = {
     replace: replace,
@@ -14,4 +15,16 @@ export const plugins = {
     rename: rename,
     newer: newer,
     if: ifPlugin,
+    fileInclude: fileInclude,
+    
+    settings: {
+        replace: {
+            components: ['$$components', './src/components/'],
+        },
+        fileIncludeSettings: {
+            prefix: '@@',
+            basepath: '@file'
+        }
+    }
 }
+

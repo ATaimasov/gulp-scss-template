@@ -6,60 +6,97 @@
 @use './fonts';
 @use './reset';
 @use './animation';
-@use './state';
 
-// common components
-@use '../components/UI/copyrights';
-
-html {
-    font-family: 'Montserrat', Arial, sans-serif;
-    scrollbar-color: hex-to-rgba($color-main, 0.9) color.adjust(white, $lightness: -10%);
-    scrollbar-width: thin;
-}
+//fix "jumping" content when the scrollbar appears or is hidden.
+// .html, .body {
+//   scrollbar-gutter: stable;
+// }
 
 .html {
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
     font-style : normal;
     line-height: 1.2em;
-    @include mf-bp-rem('font-size', (
-        xs: $font-size-html * 0.8,
-        sm: $font-size-html * 0.9,
-        xl: $font-size-html,
-    ));
+    color: $color-text-primary;
+    scrollbar-color: hex-to-rgba($color-primary, 0.9) color.adjust(white, $lightness: -10%);
+    scrollbar-width: thin;
+    scroll-padding-top: 5%;
+
+    /* exception for non smooth scrolling settings */
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
 }
 
-// grid 3 rows start
+::selection {
+  background: color.adjust($color-primary, $lightness: -20%);
+  text-shadow: none;
+  color: $color-text-primary;
+}
+
+// grid 3 rows
 .body {
-    &--grid {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-columns: 100%;
-        justify-items: center;
-        align-items: center;
-        min-height: 100vh;
-    }
+  display: grid;
+  grid-template-rows: auto 1fr auto; //  if no header and footer: grid-template-rows: auto;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .footer,
 .header,
 .main {
-    &--grid {
-        width: 100%;
-    }
+  width: 100%;
+  background-color: transparent; // set your colors
 }
-// grid 3 rows end
+//
+
+.header,
+.footer {
+  display: flex;
+
+  // change by your need
+  padding: rem(20px);
+  @media screen and (min-width: $screen-md) {
+    padding: rem(30px);
+  }
+  @media screen and (min-width: $screen-xl) {
+    padding: rem(40px);
+  }
+}
+
+.footer {
+  justify-content: center;
+
+  &__text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(5px);
+  }
+
+  &__text {
+    font-size: rem(13px);
+    line-height: 1.3em;
+  }
+}
 
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    @include mf-bp-rem('padding', (
-        xs: 15px,
-    ));
-    @include mf-bp-rem('gap', (
-        xs: 10px,
-        md: avg(10px, 20px),
-        xl: 20px
-    ));
+
+    // change it by your needs
+    max-width: 80%;
+    row-gap: rem(50px);
+    padding: rem(30px);
+  }
 }
 
 .img {
@@ -75,48 +112,16 @@ html {
 .link {
     text-decoration: none;
     cursor: pointer;
-    transition: opacity $animation-duration $animation;
+    @include event-opacity;
+}
 
-    &:is(:focus-visible, :hover) {
-        outline: none;
-        opacity: $opacity-hover;
-    }
+.btn {
+  user-select: none;
+  cursor: pointer;
+  @include event-opacity;
 }
 
 .icon {
-    fill      : white;
+    fill      : currentColor;
     transition: fill $animation-duration $animation;
-
-    @include mf-bp-rem('width', (
-        xs: 24px,
-        md: 36px,
-    ));
-    @include mf-bp-rem('height', (
-            xs: 24px,
-            md: 36px,
-    ));
-
-    &:hover {
-        fill: $color-link-hover;
-    }
-
-    svg {
-        transition: all $animation-duration $animation;
-        fill: сurrentColor;
-        
-
-        &:hover {
-            opacity: $opacity-hover;
-        }
-    }
 }
-
-::selection {
-    background: color.adjust($color-main, $lightness: -20%);
-    text-shadow: none;
-    color: white;
-}
-
-
-
-
