@@ -1,12 +1,11 @@
-@use '../../variables/variables' as *;
+@use "../../variables/variables" as *;
 
 @mixin bottom-line {
-    border-bottom: 1px solid transparent;
-    padding-bottom: 1px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+  transition: border-color $animation-duration $animation;
 
-    transition: border-color $animation-duration $animation;
-
-    &:hover {
-        border-bottom: 1px solid $color-primary;
-    }
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+  }
 }

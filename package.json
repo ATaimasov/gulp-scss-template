@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
-    "deploy": "gulp deployFTP --build"
+    "deploy": "gulp deployFTP --build",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "author": "Alexander Taimasov <alexander.taimasov@gmail.com>",
   "license": "ISC",
@@ -32,6 +34,7 @@
     "gulp-webp": "^5.0.0",
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
+    "prettier": "3.4.2",
     "sass": "^1.80.7",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "^2.2.3",

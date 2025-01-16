@@ -1,8 +1,8 @@
-@use './global' as *;
-@use 'base/root' as *;
+@use "./global" as *;
+@use "base/root" as *;
 
 // components for all pages
-@use 'components/UI/copyrights';
+@use "components/UI/copyrights";
 
 // styles for scripts and animations
-@use 'base/state';
+@use "base/state";

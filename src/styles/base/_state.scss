@@ -1,17 +1,17 @@
 .hidden {
-    display: none;
+  display: none;
 }
 
 .fullscreen {
-    min-height: 100lvh;
+  min-height: 100lvh;
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .no-wrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .smooth-mesh-background {
@@ -27,12 +27,12 @@
     height: 100%;
     background: linear-gradient(
       135deg,
-      #7AB7D9 0%,
-      #6AAAC8 20%,
-      #5A9CB7 40%,
-      #4A8EA6 60%,
-      #3A8095 80%,
-      #2A7284 100%
+      #7ab7d9 0%,
+      #6aaac8 20%,
+      #5a9cb7 40%,
+      #4a8ea6 60%,
+      #3a8095 80%,
+      #2a7284 100%
     );
     background-size: 400% 400%;
     animation: gradientShift 25s ease infinite;
