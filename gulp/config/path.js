@@ -20,7 +20,7 @@ export const path = {
     html: `${srcFolder}/**/*.html`,
     scss: `${srcFolder}/styles/*.scss`,
     favicons: `${srcFolder}/assets/favicons/*.*`,
-    fonts: `${srcFolder}/assets/fonts/**/*.{woff2,woff,ttf,svg,eot}`,
+    fonts: `${srcFolder}/assets/fonts/**/*.{woff2,woff,ttf,svg,eot,otf}`,
     images: `${srcFolder}/assets/img/*.{jpg,jpeg,png,gif,webp,avif}`,
     svg: `${srcFolder}/assets/svg/*.svg`,
     aliases: `${srcFolder}/**/*.{js,scss,html}`,
