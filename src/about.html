@@ -11,8 +11,8 @@
     <header class="header">
       @@include('./components/TheHeader.html', {"class": 'header'})
     </header>
-    <main class="main" id="app">
-      @@include('./components/TheMain.html', { "page": "about" })
+    <main class="main">
+      @@include('./components/TheMain.html', { "main": false, "about": true })
     </main>
     <footer class="footer">
       @@include('./components/TheFooter.html', {})

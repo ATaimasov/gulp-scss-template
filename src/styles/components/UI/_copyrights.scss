@@ -2,29 +2,8 @@
 
 .copyrights {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
-  @include mf-bp-rem(
-    "padding",
-    (
-      xs: 16px,
-    )
-  );
-
-  &__logo {
-    @include mf-bp-rem(
-      "width",
-      (
-        xs: 163px,
-      )
-    );
-    @include mf-bp-rem(
-      "height",
-      (
-        xs: 32px,
-      )
-    );
-  }
+  // to change the logo colour you need to change fill directly in svg file or insert svg file as a separate svg element into html
 }

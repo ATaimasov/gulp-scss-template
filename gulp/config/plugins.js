@@ -24,6 +24,10 @@ export const plugins = {
     fileIncludeSettings: {
       prefix: "@@",
       basepath: "@file",
+      context: {
+        main: true,
+        about: true,
+      }
     },
   },
 };
