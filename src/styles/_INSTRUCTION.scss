@@ -22,9 +22,9 @@
     @include mf-bp-rem(
       "font-size",
       (
-        xs: $font-size-html * 0.8,
-        sm: $font-size-html * 0.9,
-        xl: $font-size-html,
+        xs: $font-size * 0.8,
+        sm: $font-size * 0.9,
+        xl: $font-size,
       )
     );
 
@@ -57,7 +57,7 @@
     // concise syntax (work only in order of map keys of breakpoints)
     @include mf-bp-rem(
       "font-size",
-      brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html)
+      brief-bp($font-size * 0.8, $font-size * 0.9, $font-size)
     );
     // it is apply styles for breakpoints: xs, sm, md
 
@@ -65,7 +65,7 @@
     // you can use syntax from 1.1 and 1.2 but without converting values to rem. just remove '-rem'
     @include mf-bp(
       "font-size",
-      brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html)
+      brief-bp($font-size * 0.8, $font-size * 0.9, $font-size)
     );
 
     // 2.1
@@ -73,24 +73,24 @@
     // you can you this mixin
     @include mtd-bp-rem(
       "font-size",
-      $font-size-html,
-      $font-size-html * 0.9,
-      $font-size-html * 0.8
+      $font-size,
+      $font-size * 0.9,
+      $font-size * 0.8
     );
 
     // 2.2
     // it is also support 'non rem'
     @include mtd-bp(
       "font-size",
-      $font-size-html,
-      $font-size-html * 0.9,
-      $font-size-html * 0.8
+      $font-size,
+      $font-size * 0.9,
+      $font-size * 0.8
     );
 
     // 2.3
     // this mixin also can be used with only one value or two values (mobile, desktop)
     // using for one value have sense when you need fast convert px to rem
-    @include mtd-bp-rem("font-size", $font-size-html);
+    @include mtd-bp-rem("font-size", $font-size);
   }
 
   &__average {
@@ -158,12 +158,12 @@
 
   &__colors {
     // hex conversion
-    $color-primary: #01579b;
+    $color-main: #01579b;
 
     background-image: linear-gradient(
       to right,
-      hex-to-rgba($color-primary, 1),
-      hex-to-rgba($color-primary, 0)
+      hex-to-rgba($color-main, 1),
+      hex-to-rgba($color-main, 0)
     );
   }
 
