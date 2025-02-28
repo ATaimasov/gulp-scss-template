@@ -1,23 +1,29 @@
 <!doctype html>
 <html lang="ru" class="html">
-  <head>
-    @@include('./components/Head.html', { "title": "Alexander Taimasov",
-    "description": "Alexander Taimasov", "ogImage":
-    "https://xn--80aag0apnud.xn--p1ai/", "ogUrl":
-    "https://xn--80aag0apnud.xn--p1ai/img/Alexander-Taimasov.png", "style-name":
-    "main" })
-  </head>
-  <body class="body smooth-mesh-background">
-    <header class="header">
-      @@include('./components/TheHeader.html', {"class": 'header'})
-    </header>
-    <main class="main">
-      @@include('./components/TheMain.html', {})
-    </main>
-    <footer class="footer">
-      @@include('./components/TheFooter.html', {})
-      <div class="screen-overlay--fade" id="screen-overlay--fade"></div>
-    </footer>
-    <script src="./js/main.min.js"></script>
-  </body>
+
+<head>
+  @@include('./components/Head.html', {
+  "title": "Alexander Taimasov",
+  "description": "Alexander Taimasov",
+  "ogImage": "https://avatars.githubusercontent.com/u/136252899",
+  "style-name": "main"
+  })
+</head>
+
+<body class="body smooth-mesh-background">
+  <header class="header">
+    @@include('./components/TheHeader.html', {
+    "class": 'header'
+    })
+  </header>
+  <main class="main">
+    @@include('./components/TheMain.html', {})
+  </main>
+  <footer class="footer">
+    @@include('./components/TheFooter.html', {})
+    <div class="screen-overlay--fade" id="screen-overlay--fade"></div>
+  </footer>
+  <script src="./js/main.min.js"></script>
+</body>
+
 </html>
