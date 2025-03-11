@@ -34,22 +34,24 @@
   color: $text-color;
 }
 
-// grid 3 rows
 .body {
-  display: grid;
-  grid-template-rows: auto 1fr auto; //  if no header and footer: grid-template-rows: auto;
-  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   min-height: 100vh;
 }
+
 .footer,
 .header,
 .main {
   width: 100%;
   background-color: transparent; //? set your colors
 }
-//
+
+.main {
+  flex-grow: 1; // fill the remaining space
+}
 
 .header,
 .footer {
@@ -66,7 +68,8 @@
   }
 }
 
-.header {
+.header,
+.header__container {
   justify-content: center;
   flex-direction: column;
 
@@ -74,6 +77,15 @@
     justify-content: space-between;
     flex-direction: row;
   }
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  //! delete or change
+  row-gap: rem(20px);
 }
 
 .footer {
