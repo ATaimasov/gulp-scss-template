@@ -14,8 +14,7 @@
 
 .html {
   font-family: $font-family;
-  line-height: $line-height;
-  color: $text-color;
+  color: $color--text;
   scrollbar-color: hex-to-rgba($color-main, 0.9)
     color.adjust(white, $lightness: -10%);
   scrollbar-width: thin;
@@ -31,7 +30,7 @@
 ::selection {
   background: color.adjust($color-main, $lightness: -20%);
   text-shadow: none;
-  color: $text-color;
+  color: $color--text;
 }
 
 .body {
@@ -40,6 +39,7 @@
   justify-items: center;
   align-items: center;
   min-height: 100vh;
+  line-height: $line-height;
 }
 
 .footer,
@@ -118,27 +118,45 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 
   //! delete or change
-  padding-top: rem(5px);
-  padding-bottom: rem(5px);
-  padding-right: rem(10px);
-  padding-left: rem(10px);
-  row-gap: rem(20px);
-  max-width: 80%;
+  padding: 0 rem(10px);
 
   @media screen and (min-width: $screen-md) {
-    padding-top: rem(15px);
-    padding-bottom: rem(15px);
-    padding-right: rem(30px);
-    padding-left: rem(30px);
-    row-gap: rem(30px);
+    padding: 0 rem(30px);
   }
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //! delete or change
+  gap: rem(30px);
+  max-width: rem(1200px);
+  width: 100%;
+}
+
+.section__title {
+  font-size: $font-size--h1;
+  font-weight: $font-weight--h1;
+  line-height: $line-height--h1;
+  text-transform: uppercase;
 }
 
 .img {
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .logo {
@@ -152,7 +170,7 @@
   cursor: pointer;
 
   //! delete or change
-  color: $text-color;
+  color: $color--text;
   @include event-opacity;
 }
 
@@ -161,7 +179,7 @@
   cursor: pointer;
 
   //! delete or change
-  color: $text-color;
+  color: $color--text;
   border: none;
   @include event-opacity;
 }
