@@ -87,12 +87,15 @@ video {
 }
 
 button,
-html,
 input,
 select,
 textarea {
   color: #222;
   font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
   vertical-align: baseline;
 }
 
@@ -148,10 +151,6 @@ input[type="search"] {
 
 input[type="number"] {
   -moz-appearance: textfield;
-}
-
-body {
-  line-height: 1;
 }
 
 ol,
