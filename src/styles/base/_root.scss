@@ -72,17 +72,6 @@
 
 .main {
   flex-grow: 1; // fill the remaining space
-}
-
-.header,
-.header__container {
-  @media screen and (min-width: $screen-sm) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-
-.main {
   height: 100%;
   // justify-content: center; // centering one content in the middle of the page
 }
@@ -101,7 +90,6 @@
   font-size: $font-size--h1;
   font-weight: $font-weight--h1;
   line-height: $line-height--h1;
-  text-transform: uppercase;
 }
 .section__subtitle {
   font-family: $font-family--h2;
@@ -143,7 +131,20 @@
   fill: currentColor;
 }
 
+//! custom positioning
+.header,
+.header__container {
+  @media screen and (min-width: $screen-sm) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
 //! custom styles for custom elements
+.section__title {
+  text-align: center;
+  text-transform: uppercase;
+}
 .btn {
   border-radius: 10px;
   @include event-opacity;
