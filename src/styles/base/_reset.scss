@@ -220,6 +220,11 @@ table {
 // on some selector and all its descendants will inherit this property.
 html {
   box-sizing: border-box;
+
+  /* exception for non smooth scrolling settings */
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 *,
