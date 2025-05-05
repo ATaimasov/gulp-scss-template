@@ -13,8 +13,6 @@
 // }
 
 .html {
-  font-size: $font-size--root;
-  font-family: $font-family;
   color: $color-main--text;
   scrollbar-color: rgba($color-main, 0.9) color.adjust(white, $lightness: -10%);
   scrollbar-width: thin;
@@ -22,17 +20,22 @@
   // appearance: none;
 }
 
-::selection {
-  background: color.adjust($color-main, $lightness: -20%);
-  text-shadow: none;
-  color: $color-main--text;
+.html,
+.body {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
 
 .body {
   justify-items: center;
   min-height: 100vh;
-  font-size: $font-size;
-  line-height: $line-height;
+
+  &::selection {
+    background: color.adjust($color-main, $lightness: -20%);
+    text-shadow: none;
+    color: $color-main--text;
+  }
 }
 
 .body,
@@ -103,7 +106,6 @@
   font-weight: $font-weight--btn;
   line-height: $line-height--btn;
 }
-
 // base styles for custom elements
 .btn {
   text-transform: uppercase;
@@ -122,13 +124,13 @@
   color: inherit;
   user-select: none;
 }
+.icon {
+  fill: currentColor;
+}
 .link {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-.icon {
-  fill: currentColor;
 }
 
 //! custom positioning

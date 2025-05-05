@@ -1,9 +1,6 @@
-@use "../functions/values/rem" as *;
-
-$font-size--root: 16px;
-
 $font-family: "Montserrat", Arial, sans-serif;
-$font-size: $font-size--root;
+$font-size: 16px;
+$font-weight: 400;
 $line-height: 1.4;
 
 $font-family--h1: "Montserrat", Arial, sans-serif;
