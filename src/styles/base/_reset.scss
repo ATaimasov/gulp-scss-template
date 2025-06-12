@@ -215,13 +215,20 @@ table {
   border-spacing: 0;
 }
 
-// all elements inherit box-sizing from the root element,
-// but if you need to change it, just return box-sizing: content-box;
-// on some selector and all its descendants will inherit this property.
 html {
+  /* all elements inherit box-sizing from the root element,
+  but if you need to change it, just return box-sizing: content-box;
+  on some selector and all its descendants will inherit this property. */
   box-sizing: border-box;
 
-  /* exception for non smooth scrolling settings */
+  /* don't allow browser to change font-size */
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+
+  /* uses smooth scrolling by default for links,
+  except for settings without smooth scrolling */
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
